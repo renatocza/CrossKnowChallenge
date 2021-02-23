@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CrossKnowledge - Code challenge</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="Style.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <article>
+        <header>
+            <div>
+                <div>
+                    Avengers: Infinity War
+                </div>
+                <div>
+                    156 minutes
+                </div>
+            </div>
+            <div>
+                85% <img class="rottenImage" src="" alt="">
+            </div>
+        </header>
+
+        <div>
+            <img class="movieImage" src="">
+            <a href="https://www.rottentomatoes.com/m/avengers_infinity_war" target="_blank">
+                Check review
+            </a>
+        </div>
+
+        <footer>
+            <p>
+                An unprecedented cinematic journey ten years in the making and spanning the entire Marvel Cinematic Universe, Marvel Studios' "Avengers: Infinity War" brings to the screen the ultimate, deadliest showdown of all time. The Avengers and their Super Hero allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.
+            </p>
+        </footer>
+    </article>
+    <div class="date"></div>
+    <script>
+
+        function GetImage(url, component) {
+            $.get("/Home/GetImage?url=" + url, function (data) {
+                $(component).attr("src", "data:image/png;base64, " + data);
+            });
+
+        };
+
+        function GetPage(url, component) {
+            $.get("/Home/GetPage?url=" + url, function (data) {
+                $(component).html(data);
+            });
+        }
+
+        $(document).ready(function () {
+            console.log("ready!");
+            GetImage("https://www.rottentomatoes.com/assets/pizza-pie/images/icons/global/cf-lg.3c29eff04f2.png", ".rottenImage");
+            GetImage("https://i.ibb.co/9tLcR7s/avengers.jpg", ".movieImage");
+            //GetPage("date-format.html", ".js-date-format");
+            $('.date').load("date-format.html");
+        });
+
+        
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
