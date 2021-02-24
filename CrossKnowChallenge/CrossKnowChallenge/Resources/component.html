@@ -4,8 +4,13 @@
     <meta charset="utf-8">
     <title>CrossKnowledge - Code challenge</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-    <link href="Style.css" rel="stylesheet"/>
+    <link href="Style.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <style>
+        body {
+            font-family: "Roboto";
+        }
+    </style>
 </head>
 <body>
     <article>
@@ -36,7 +41,7 @@
             </p>
         </footer>
     </article>
-    <div class="date"></div>
+    <!--<div class="date"></div>-->
     <script>
 
         function GetImage(url, component) {
@@ -56,11 +61,10 @@
             console.log("ready!");
             GetImage("https://www.rottentomatoes.com/assets/pizza-pie/images/icons/global/cf-lg.3c29eff04f2.png", ".rottenImage");
             GetImage("https://i.ibb.co/9tLcR7s/avengers.jpg", ".movieImage");
-            //GetPage("date-format.html", ".js-date-format");
-            $('.date').load("date-format.html");
+            //$('.date').load("date-format.html");
         });
 
-        
+
 
 
 
