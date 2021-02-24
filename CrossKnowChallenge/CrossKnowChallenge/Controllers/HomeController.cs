@@ -21,7 +21,8 @@ namespace CrossKnowChallenge.Controllers
 
         public IActionResult Index()
         {
-            return Redirect("component.html");
+            //return Redirect("component.html");
+            return View();
         }
 
         public IActionResult Privacy()
